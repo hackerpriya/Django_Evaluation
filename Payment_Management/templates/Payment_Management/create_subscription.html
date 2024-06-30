@@ -1,0 +1,22 @@
+<form method="post" action="{% url 'create_subscription' %}">
+    {% csrf_token %}
+    <label for="user">Select User:</label>
+    <select name="user" id="user">
+      {% for user in users %}
+        <option value="{{ user.id }}">{{ user.name }}</option>
+      {% endfor %}
+    </select><br><br>
+  
+    <label for="service">Select Service:</label>
+    <select name="service" id="service">
+      {% for service in services %}
+        <option value="{{ service.id }}">{{ service.type }}</option>
+      {% endfor %}
+    </select><br><br>
+  
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" name="amount"><br><br>
+  
+    <button type="submit">Create Subscription</button>
+  </form>
+  

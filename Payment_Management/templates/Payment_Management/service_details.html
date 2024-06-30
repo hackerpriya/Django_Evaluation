@@ -1,0 +1,10 @@
+<h2>{{ service.type }}</h2>
+<p>Mode of Payment: {{ service.get_mode_of_payment_display }}</p>
+<p>Company: {{ service.company }}</p>
+
+<h3>Subscribed Users:</h3>
+<ul>
+  {% for subscription in subscriptions %}
+    <li>{{ subscription.user.name }} - Amount: {{ subscription.amount }}</li>
+  {% endfor %}
+</ul>

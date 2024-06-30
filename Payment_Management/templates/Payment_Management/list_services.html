@@ -1,0 +1,6 @@
+<ul>
+    {% for service in services %}
+      <li><a href="{% url 'service_details' service.type %}">{{ service.type }}</a></li>
+    {% endfor %}
+  </ul>
+  
